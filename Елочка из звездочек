@@ -1,0 +1,26 @@
+let c = +prompt("Введите высоту");
+
+for (let i = 0; i < c; i++) {
+    for (let space = 0; space < c - i; space++) {
+        console.put(" ");
+    }
+
+    for (let j = 0; j <= i; j++) {
+        console.put("*");
+    }
+
+    for (let j = 1; j <= i; j++) {
+        console.put("*");
+    }
+
+    console.log("\n");
+}
+
+for (let i = 0; i < c; i++) {
+    console.put(" ");
+}
+
+for (let j = 1; j < c;) {
+    console.put("*");
+    j = j + c;
+}
