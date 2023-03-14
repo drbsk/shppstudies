@@ -1,3 +1,4 @@
+//Мое решение
 let input = 2;
 let b;
 let c = 2;
@@ -23,3 +24,14 @@ for (let i = 0; i < input;) {
         }
     }
 }
+
+//Рекомендованное решение
+let maxNumber = -Infinity;
+ 
+for (let input; input != 0; input = parseInt(prompt("Введи число"))) {
+    if (input != "" && input % 2 == 0 && input > maxNumber) {
+        maxNumber = input;
+    }
+}
+ 
+console.log(maxNumber === -Infinity ? "Жодного парного" : maxNumber);
