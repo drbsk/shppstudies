@@ -1,27 +1,25 @@
-let a;
+let input = 2;
 let b;
 let c = 2;
 
-a = prompt("Введите число или введите 0 что бы остановить программу");
+for (let i = 0; i < input;) {
+    input = parseInt(
+        prompt("Введите число или введите 0 что бы остановить программу")
+    );
 
-for (let i = 0; i < a;) {
-    a = prompt("Введите число или введите 0 что бы остановить программу");
-
-    if (a == 0) {
-        if (b == null) {
+    if (input == 0) {
+        if (input == 0 && b == null) {
             console.log("Жодного парного");
-        } else if (a == 0 && b == null) {
-            break;
         } else {
             console.log(c);
         }
 
         break;
-    } else if (a % 2 == 0) {
-        b = a;
+    } else if (input % 2 == 0) {
+        b = input;
 
         if (b >= c) {
-            c = a;
+            c = input;
         }
     }
 }
