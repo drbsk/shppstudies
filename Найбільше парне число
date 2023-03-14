@@ -1,0 +1,23 @@
+let a;
+let b;
+let c;
+
+a = prompt("Введите число или введите 0 что бы остановить программу");
+
+for (let i = 0; i < a;) {
+    a = prompt("Введите число или введите 0 что бы остановить программу");
+
+    if (a == 0) {
+        if (b == null) {
+            console.log("Жодного парного");
+        } else if (a == 0 && b == null) {
+            break;
+        } else {
+            console.log(b);
+        }
+
+        break;
+    } else if (a % 2 == 0) {
+        b = a;
+    }
+}
