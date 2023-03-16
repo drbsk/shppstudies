@@ -1,0 +1,44 @@
+//Моє рішення
+let cities = [];
+let found;
+let i = 0;
+
+while (i < 10) {
+    cities[i] = prompt("Назва міста");
+    i++;
+}
+
+let hometown = prompt("Введіть свое рідне місто");
+
+i = 0;
+
+while (i < 10) {
+    if (cities[i] == hometown) {
+        found = 1;
+    }
+
+    i++;
+}
+
+if (found == 1) {
+    console.log("Я знаю твоє місто");
+} else {
+    console.log("Я НЕ знаю твоє місто");
+}
+
+// Рекомендоване рішення
+let cities = [];
+for (let i = 0; i < 10; i++) {
+    cities[i] = prompt("Введи місто " + (i + 1));
+}
+ 
+let homeCity = prompt("Введи рідне місто");
+ 
+let wasHomeCityFound = false;
+for (let i = 0; i < cities.length && !wasHomeCityFound; i++) {
+    if (cities[i] == homeCity) {
+        wasHomeCityFound = true;
+    }
+}
+ 
+console.log("Я " + (wasHomeCityFound ? "" : "НЕ ") + "знаю твоє місто");
