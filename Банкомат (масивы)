@@ -1,0 +1,86 @@
+//Мое решение
+let bankAccount = [-123, 33, 0, 4500, -611, 44, 0, 0, -1, -85];
+let cardNumber = parseInt(prompt("Введите номер карты"));
+let userAction;
+let actionDone = 0;
+let totalBalance = 0;
+let access = 0;
+
+while (access < 1) {
+    if (bankAccount[cardNumber] != undefined) {
+        access = 1;
+
+        for (let i = 0; i <= cardNumber; i++) {
+            if (i == cardNumber) {
+                while (actionDone < 1) {
+                    userAction = parseInt(
+                        prompt("Какую сумму желаете снять или пополнить?")
+                    );
+
+                    if (userAction >= -1000 && userAction <= 1000) {
+                        bankAccount[i] += userAction;
+                        actionDone = 1;
+                        console.log("Поточна картка: " + cardNumber);
+                        console.log("Сума транзакції: " + userAction);
+                        console.put("Стан рахунків: ");
+
+                        for (let j = 0; j < 9; j++) {
+                            console.put(bankAccount[j] + ", ");
+                        }
+
+                        console.put(bankAccount[9]);
+
+                        for (let b = 0; b < 10; b++) {
+                            totalBalance += bankAccount[b];
+                        }
+
+                        console.log("\nЗагальний баланс: " + totalBalance);
+                    } else {
+                        userAction = parseInt(
+                            prompt("Какую сумму желаете снять или пополнить?")
+                        );
+                    }
+                }
+            }
+        }
+    } else {
+        cardNumber = parseInt(prompt("Введите номер карты"));
+    }
+}
+
+//Рекомендованное решение
+let cards = [-123, 33, 0, 4500, -611, 44, 0, 0, -1, -85];
+
+let cardNumber;
+
+do {
+    cardNumber = +prompt("Введіть номер картки");
+} while (cardNumber < 0 || cardNumber > cards.length - 1);
+
+let transaction;
+
+do {
+    transaction = +prompt("Введіть суму транзакції");
+} while (transaction > 1000 || transaction < -1000);
+
+cards[cardNumber] += transaction;
+
+let moneyTotal = 0;
+let cardsTotal = "";
+
+for (let i = 0; i < cards.length; i++) {
+    moneyTotal += cards[i];
+}
+
+for (let i = 0; i < cards.length; i++) {
+    cardsTotal += cards[i];
+
+    if (i < cards.length - 1) {
+        cardsTotal += ", ";
+    }
+}
+
+console.log("Поточна картка: " + cardNumber);
+console.log("Сума транзакції: " + transaction);
+console.log("Стан рахунків: " + cardsTotal);
+console.log("Загальний баланс: " + moneyTotal);
