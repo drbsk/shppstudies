@@ -1,0 +1,68 @@
+//Мое Решение
+
+let array = [];
+let request;
+let i = 0;
+let maxNum = 0;
+let space;
+
+while (request != 0) {
+    request = parseInt(prompt("Vvedite vashe 4islo"));
+
+    if (request % 2 != 0) {
+        array[i] = request;
+        i++;
+    }
+}
+
+for (let j = 0; j < array.length; j++) {
+    if (array[j] > maxNum) {
+        maxNum = array[j];
+    }
+}
+
+for (let i = 0; i < array.length; i++) {
+    space = maxNum - array[i];
+    space /= 2;
+
+    for (let j = 0; j < space; j++) {
+        console.put(" ");
+    }
+
+    for (let j = 0; j < array[i]; j++) {
+        console.put("*");
+    }
+
+    console.log("\n");
+}
+
+//Рекомендованное решение
+
+let lines = [];
+ 
+for (let i = 0, iLine; iLine !== 0 && lines.length < 20; ) {
+    iLine = +prompt(`Введіть довжину ${i + 1} рядка`);
+    if (iLine % 2 !== 0) {
+        lines[i] = iLine;
+        i++;
+    }
+}
+ 
+let maxWidth = 0;
+for (let i = 0; i < lines.length; i++) {
+    if (lines[i] > maxWidth) {
+        maxWidth = lines[i];
+    }
+}
+ 
+for (let i = 0, j, stop, center = maxWidth / 2; i < lines.length; i++) {
+    for (j = 0, stop = center - lines[i] / 2; j < stop; j++) {
+        console.put(" ");
+    }
+ 
+    for (j = 0; j < lines[i]; j++) {
+        console.put("*");
+    }
+ 
+    console.log();
+}
