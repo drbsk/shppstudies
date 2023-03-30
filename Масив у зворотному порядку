@@ -1,0 +1,46 @@
+function main () {
+    let p = prompt("Какой хотите размер массива?");
+    let m = [];
+
+    for (let i = 0; i < p; i++) {
+        m[i] = prompt("Ваш элемент номер: " + (i + 1));
+    }
+
+    console.put("[");
+
+    for (let i = 0; i < p; i++) {
+        if (m[i] != undefined) {
+            console.put(m[i]);
+
+            if (i != p - 1) {
+                console.put(",");
+            }
+        }
+    }
+
+    console.log("]");
+
+    for (let i = 0, j = m.length - 1; i < j; i++, j--) {
+        let temp = m[j];
+
+        m[j] = m[i];
+        m[i] = temp;
+    }
+
+    console.put("Вот реверснутый масив: ");
+    console.put("[");
+
+    for (let i = 0; i < p; i++) {
+        if (m[i] != undefined) {
+            console.put(m[i]);
+
+            if (i != p - 1) {
+                console.put(",");
+            }
+        }
+    }
+
+    console.log("]");
+}
+
+main();
